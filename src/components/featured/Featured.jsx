@@ -4,7 +4,7 @@ import "./featured.css";
 const Featured = () => {
 //url = localhost:8800/api/hotels/countByCity?cities=berlin,madrid,london
 const {data, loading, error, reFetch} = useFetch(//proxy not working in package.json=>"proxy": "http://localhost:8800/api",
-  "https://anuj-booking-app-backend.onrender.com/api/hotels/countByCity?cities=berlin,madrid,london"
+  "/hotels/countByCity?cities=berlin,madrid,london"
   );
 // console.log(data);
   return (

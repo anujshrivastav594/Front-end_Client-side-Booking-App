@@ -26,7 +26,7 @@ const Register = ()=>{
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("https://anuj-booking-app-backend.onrender.com/api/auth/register", credentials);
+      const res = await axios.post("/auth/register", credentials);
       await dispatch({ type: "LOGIN_SUCCESS", payload: res.data });//here i added await to console user after dispattch  function completed its work
     //   console.log(user)
       navigate("/")

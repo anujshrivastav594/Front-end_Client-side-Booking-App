@@ -21,7 +21,7 @@ const List = () => {
   const { dispatch } = useContext(searchContext);
 
   const {data, loading, error, reFetch} = useFetch(//proxy not working in package.json=>"proxy": "http://localhost:8800/api",
-  `https://anuj-booking-app-backend.onrender.com/api/hotels/?city=${destination}&min=${min || 0}&max=${max || 999}`
+  `/hotels/?city=${destination}&min=${min || 0}&max=${max || 999}`
   );
 
   const handleChange = (e)=>{

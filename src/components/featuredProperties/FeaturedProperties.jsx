@@ -4,7 +4,7 @@ import useFetch from "../../hooks/useFetch.js";
 const FeaturedProperties = () => {
 
   const {data, loading, error, reFetch} = useFetch(
-  "https://anuj-booking-app-backend.onrender.com/api/hotels/?featured=true&limit=4"//&min=4&max=66
+  "/hotels/?featured=true&limit=4"//&min=4&max=66
   );
 
   return (

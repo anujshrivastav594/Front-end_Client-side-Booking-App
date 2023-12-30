@@ -27,7 +27,7 @@ const Hotel = () => {
   const [openModal, setOpenModal] = useState(false);
 
   const {data, loading, error, reFetch} = useFetch(//proxy not working in package.json=>"proxy": "http://localhost:8800/api",
-  `https://anuj-booking-app-backend.onrender.com/api/hotels/find/${id}`
+  `/hotels/find/${id}`
   );
   // console.log(data)
   const {user} = useContext(AuthContext);

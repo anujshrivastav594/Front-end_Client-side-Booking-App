@@ -2,8 +2,8 @@ import "./propertyList.css";
 import useFetch from "../../hooks/useFetch.js";
 
 const PropertyList = () => {
-  const {data, loading, error, reFetch} = useFetch(//proxy not working in package.json=>"proxy": "http://localhost:8800/api",
-  "https://anuj-booking-app-backend.onrender.com/api/hotels/countByType"
+  const {data, loading, error, reFetch} = useFetch(
+  "/hotels/countByType"
   );
 // console.log(data);
 

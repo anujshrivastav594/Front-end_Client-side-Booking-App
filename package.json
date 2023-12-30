@@ -47,18 +47,6 @@
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "html-webpack-plugin": "^5.6.0",
-    "react-refresh": "^0.14.0",
-    "@babel/core": "7.22.5",
-    "@babel/eslint-parser": "7.22.5",
-    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
-    "@babel/preset-env": "7.22.5"
-
-  },
-  "plugins": [
-    ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
-],
-"overrides": {
-  "react-refresh": "0.11.0"
-}
-
+    "react-refresh": "^0.14.0"
+  }
 }

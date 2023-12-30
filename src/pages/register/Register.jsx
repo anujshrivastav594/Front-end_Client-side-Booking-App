@@ -1,0 +1,93 @@
+import axios from "axios";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./register.css"
+import { AuthContext } from "../../context/AuthContext";
+
+const Register = ()=>{
+   const [credentials, setCredentials] = useState({
+    username: undefined,
+    country: undefined,
+    city: undefined,
+    phone: undefined,
+    email: undefined,
+    password: undefined
+   });
+
+   const {user, loading, error, dispatch } = useContext(AuthContext);
+
+   const navigate = useNavigate()
+
+  const handleChange = (e) => {
+    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    dispatch({ type: "LOGIN_START" });
+    try {
+      const res = await axios.post("https://anuj-booking-app-backend.onrender.com/api/auth/register", credentials);
+      await dispatch({ type: "LOGIN_SUCCESS", payload: res.data });//here i added await to console user after dispattch  function completed its work
+    //   console.log(user)
+      navigate("/")
+    } catch (err) {//catch method never executes when res.status is in range of 200 to 299
+      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+    }
+  };
+
+   return (
+    <div className="login">
+      <div className="lContainer">
+        <input
+          type="text"
+          placeholder="Username"
+          id="username"
+          onChange={handleChange}
+          className="lInput"
+        />
+        
+        <input
+          type="text"
+          placeholder="Country"
+          id="country"
+          onChange={handleChange}
+          className="lInput"
+        />
+        <input
+          type="text"
+          placeholder="City"
+          id="city"
+          onChange={handleChange}
+          className="lInput"
+        />
+        <input
+          type="text"
+          placeholder="contact no."
+          id="phone"
+          onChange={handleChange}
+          className="lInput"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          id="email"
+          onChange={handleChange}
+          className="lInput"
+        />
+        <input
+          type="password"
+          placeholder="password"
+          id="password"
+          onChange={handleChange}
+          className="lInput"
+        />
+        <button disabled={loading} onClick={handleClick} className="lButton">
+          SignIn / Register
+        </button>
+        {error && <span>{error.message}</span>}
+      </div>
+    </div>
+   )
+}
+
+export default Register;

@@ -56,6 +56,9 @@
   },
   "plugins": [
     ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
-]
+],
+"overrides": {
+  "react-refresh": "0.11.0"
+}
 
 }

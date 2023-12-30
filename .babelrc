@@ -1,13 +1,13 @@
 
 {
     "presets": [
-        ["@babel/preset-env", { "targets": "defaults" }],
-        "@babel/preset-react",
-        "react-refresh/babel"
-      ],
+      ["@babel/preset-env", { "targets": "defaults" }],
+      "@babel/preset-react"
+    ],
     "plugins": [
-        "@babel/plugin-proposal-private-property-in-object",
-        "transform-unicode-property-regex",
-        "react-refresh/babel"
+      "@babel/plugin-proposal-private-property-in-object",
+      "transform-unicode-property-regex",
+      "react-refresh/babel"
     ]
-    }
+  }
+  
